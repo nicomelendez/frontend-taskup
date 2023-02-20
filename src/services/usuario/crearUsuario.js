@@ -1,10 +1,9 @@
 import axios from "axios"
-import { Global } from "../../utils/Global"
 
 const crearUsuario = async (oUsuario) => {
 
     try {
-        const response = await axios.post(Global.urlBackend+'usuarios', oUsuario)
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}usuarios`, oUsuario)
         const { data } = response
     
         return data
